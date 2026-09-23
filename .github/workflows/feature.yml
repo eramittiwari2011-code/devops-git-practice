@@ -1,0 +1,21 @@
+name: My First Self-Hosted Test
+
+# 1. यह काम कब शुरू होगा? (जब भी main ब्रांच में कोड पुश होगा)
+on:
+  push:
+    branches: [ "main" ]
+
+# 2. क्या काम करना है?
+jobs:
+  my-computer-job:
+    # बहुत ज़रूरी: यह लाइन बताएगी कि काम आपके कंप्यूटर पर चलाना है
+    runs-on: self-hosted
+
+    steps:
+    # पहला स्टेप: कंप्यूटर को ग्रीट (Greet) करना
+    - name: Say Hello From Robot
+      run: echo "Hello! This job is running directly on my own computer!"
+
+    # दूसरा स्टेप: कंप्यूटर का समय चेक करना
+    - name: Check Computer Time
+      run: date
